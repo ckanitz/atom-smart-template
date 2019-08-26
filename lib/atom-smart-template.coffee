@@ -37,7 +37,7 @@ module.exports = AtomSmartTemplate =
     @atomSmartTemplateView.destroy()
 
   serialize: ->
-    atomSmartTemplateViewState: @atomSmartTemplateView.serialize()
+    atomSmartTemplateViewState: @atomSmartTemplateView
 
   openTemplatesFolder: (e) ->
     switch require('os').platform()
