@@ -7,22 +7,18 @@ fs                               = require 'fs'
 {SelectListView, TextEditorView} = require 'atom-space-pen-views'
 {allowUnsafeEval, allowUnsafeNewFunction} = require 'loophole'
 
-
 class ParamSelectView extends View
 
   initialize: (@targetPath, @template)->
-
     atom.commands.add @element,
       'core:confirm': => @onConfirm()
       'core:cancel': => @destroy()
-
 
     @createButton.on 'click', =>
       @onConfirm()
 
     @cancelButton.on 'click', =>
       @destroy()
-
 
   attach: ->
     @panel = atom.workspace.addModalPanel(item: this)
@@ -73,22 +69,17 @@ class ParamSelectView extends View
         catch error
           console.error  "Template processing error: #{error}"
 
-
-
-
-
-
     do @destroy
 
 
   @content: (itemPath, template) ->
     @div class: 'overlay from-top', =>
       @h4 'New files by template: ' + template.name
-
+      @count = 1
       for param in (template.params ? [])
         @label param
-        @subview param + 'Editor', new TextEditorView(mini: true)
-
+        @subview param + 'Editor', new TextEditorView(mini: true, tabIndex: @count,  attributes:{tabindex:@count})
+        @count++
       @button outlet: 'createButton', class: 'btn', 'Create'
       @button outlet: 'cancelButton', class: 'btn', 'Cancel'
 
@@ -99,7 +90,7 @@ module.exports =
    initialize: (@itemPath, @templates)->
      super
 
-     @addClass('overlay from-top')
+     @addClass('overlay from-top native-key-bindings')
      @setItems(@templates)
 
 
