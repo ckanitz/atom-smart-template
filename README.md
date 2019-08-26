@@ -1,19 +1,18 @@
-# atom-smart-template-extended package
+# atom-smart-template package
 
-This is a fork of Alexey Sokolovs `atom-smart-template` package: https://raw.githubusercontent.com/AlexeySokolov/atom-smart-template/
 The package is designed for quick and easy creation of file or multiple files and directories from a template using parameters.
 
 ## How to use
 Use the command "Create files from template" from the context menu of the file tree.
 
 <a href="http://www.youtube.com/watch?v=jfm30wRNL1o">
-<img src="https://raw.githubusercontent.com/ckanitz/atom-smart-template/master/assets/atom-smart-templates-files-creation-yt.png" width="420" height="315" >
+<img src="https://raw.githubusercontent.com/AlexeySokolov/atom-smart-template/master/assets/atom-smart-templates-files-creation-yt.png" width="420" height="315" >
 </a>
 
 ## How to create new template
 
 <a href="http://www.youtube.com/watch?v=mCuzvBaPWEo">
-<img src="https://raw.githubusercontent.com/ckanitz/atom-smart-template/master/assets/how-to-create-new-template-yt.png" width="560" height="315" >
+<img src="https://raw.githubusercontent.com/AlexeySokolov/atom-smart-template/master/assets/how-to-create-new-template-yt.png" width="560" height="315" >
 </a>
 
 The main file of template is "index.js":

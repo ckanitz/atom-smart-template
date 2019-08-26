@@ -15,7 +15,3 @@
 
 ## 0.3.2 - Patch
 * bug fixed
-
-## 0.3.3 - Patch
-* Allow creation of multiple files at once
-* Add tabindex to inputs

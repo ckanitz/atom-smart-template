@@ -25,11 +25,11 @@ module.exports = AtomSmartTemplate =
     @subscriptions = new CompositeDisposable
 
     # Command register
-    @subscriptions.add atom.commands.add '.tree-view .selected', 'atom-smart-template-extended:create-files-from-template', (e) => @createFilesFromTemplate(e)
+    @subscriptions.add atom.commands.add '.tree-view .selected', 'atom-smart-template:create-files-from-template', (e) => @createFilesFromTemplate(e)
 
-    @subscriptions.add atom.commands.add 'atom-workspace', 'atom-smart-template-extended:open-templates-folder', (e) => @openTemplatesFolder(e)
+    @subscriptions.add atom.commands.add 'atom-workspace', 'atom-smart-template:open-temlates-folder', (e) => @openTemplatesFolder(e)
 
-    @subscriptions.add atom.commands.add 'atom-workspace', 'atom-smart-template-extended:open-templates-folder-in-atom', (e) => @openTemplatesFolderInAtom(e)
+    @subscriptions.add atom.commands.add 'atom-workspace', 'atom-smart-template:open-temlates-folder-in-atom', (e) => @openTemplatesFolderInAtom(e)
 
   deactivate: ->
     @modalPanel.destroy()
