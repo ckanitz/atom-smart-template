@@ -1,40 +1,27 @@
 {
-  "_from": "https://www.atom.io/api/packages/atom-smart-template/versions/0.3.2/tarball",
-  "_id": "atom-smart-template@0.3.2",
-  "_inBundle": false,
-  "_integrity": "sha512-iX0b6t2kEpLR2H1F5fGV0ycN3wH3VD5CwOKPaaLO9RpHKZgwUhn758JxLEzEuhdkIsllJHkvX206OGCUK8F6dQ==",
-  "_location": "/atom-smart-template",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "remote",
-    "raw": "https://www.atom.io/api/packages/atom-smart-template/versions/0.3.2/tarball",
-    "rawSpec": "https://www.atom.io/api/packages/atom-smart-template/versions/0.3.2/tarball",
-    "saveSpec": "https://www.atom.io/api/packages/atom-smart-template/versions/0.3.2/tarball",
-    "fetchSpec": "https://www.atom.io/api/packages/atom-smart-template/versions/0.3.2/tarball"
-  },
-  "_requiredBy": [
-    "#USER",
-    "/"
+  "name": "atom-smart-template-extended",
+  "main": "./lib/atom-smart-template-extended",
+  "version": "0.3.3",
+  "description": "Files generator by templates for Atom editor",
+  "author": "Alexey Sokolov <soka.mail@gmail.com>, Christopher Kanitz <ck@luehrsen-heinrich.de>",
+  "keywords": [
+    "template"
   ],
-  "_resolved": "https://www.atom.io/api/packages/atom-smart-template/versions/0.3.2/tarball",
-  "_shasum": "72a3a3754b6cb9e9e5daf62edbea54ea4236df0e",
-  "_spec": "https://www.atom.io/api/packages/atom-smart-template/versions/0.3.2/tarball",
-  "_where": "/private/var/folders/_7/v3c7frjx1r133plpg8hsvw780000gn/T/apm-install-dir-119030-23888-1jy539.zamfp",
   "activationCommands": {
     ".tree-view .selected": "atom-smart-template:create-files-from-template",
     "atom-workspace": [
-      "atom-smart-template:open-temlates-folder",
-      "atom-smart-template:open-temlates-folder-in-atom"
+      "atom-smart-template-extended:open-templates-folder",
+      "atom-smart-template-extended:open-templates-folder-in-atom"
     ]
   },
-  "author": {
-    "name": "Alexey Sokolov",
-    "email": "soka.mail@gmail.com"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ckanitz/atom-smart-template"
   },
-  "bugs": {
-    "url": "https://github.com/AlexeySokolov/atom-smart-template/issues"
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
   },
-  "bundleDependencies": false,
   "dependencies": {
     "atom-space-pen-views": "^2.1.0",
     "fs-extra": "^0.26.2",
@@ -42,22 +29,5 @@
     "loophole": "^1.1.0",
     "space-pen": "^5.1.1",
     "underscore": "^1.8.3"
-  },
-  "deprecated": false,
-  "description": "Files generator by templates for Atom editor",
-  "engines": {
-    "atom": ">=1.0.0 <2.0.0"
-  },
-  "homepage": "https://github.com/AlexeySokolov/atom-smart-template#readme",
-  "keywords": [
-    "template"
-  ],
-  "license": "MIT",
-  "main": "./lib/atom-smart-template",
-  "name": "atom-smart-template",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AlexeySokolov/atom-smart-template.git"
-  },
-  "version": "0.3.2"
+  }
 }

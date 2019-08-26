@@ -1,39 +1,39 @@
-AtomSmartTemplate = require '../lib/atom-smart-template'
+AtomSmartTemplate = require '../lib/atom-smart-template-extended-extended'
 
 # Use the command `window:run-package-specs` (cmd-alt-ctrl-p) to run specs.
 #
 # To run a specific `it` or `describe` block add an `f` to the front (e.g. `fit`
 # or `fdescribe`). Remove the `f` to unfocus the block.
 
-describe "AtomSmartTemplate", ->
+describe "AtomSmartTemplateExtended", ->
   [workspaceElement, activationPromise] = []
 
   beforeEach ->
     workspaceElement = atom.views.getView(atom.workspace)
-    activationPromise = atom.packages.activatePackage('atom-smart-template')
+    activationPromise = atom.packages.activatePackage('atom-smart-template-extended')
 
-  describe "when the atom-smart-template:toggle event is triggered", ->
+  describe "when the atom-smart-template-extended:toggle event is triggered", ->
     it "hides and shows the modal panel", ->
       # Before the activation event the view is not on the DOM, and no panel
       # has been created
-      expect(workspaceElement.querySelector('.atom-smart-template')).not.toExist()
+      expect(workspaceElement.querySelector('.atom-smart-template-extended')).not.toExist()
 
       # This is an activation event, triggering it will cause the package to be
       # activated.
-      atom.commands.dispatch workspaceElement, 'atom-smart-template:toggle'
+      atom.commands.dispatch workspaceElement, 'atom-smart-template-extended:toggle'
 
       waitsForPromise ->
         activationPromise
 
       runs ->
-        expect(workspaceElement.querySelector('.atom-smart-template')).toExist()
+        expect(workspaceElement.querySelector('.atom-smart-template-extended')).toExist()
 
-        atomSmartTemplateElement = workspaceElement.querySelector('.atom-smart-template')
+        atomSmartTemplateElement = workspaceElement.querySelector('.atom-smart-template-extended')
         expect(atomSmartTemplateElement).toExist()
 
         atomSmartTemplatePanel = atom.workspace.panelForItem(atomSmartTemplateElement)
         expect(atomSmartTemplatePanel.isVisible()).toBe true
-        atom.commands.dispatch workspaceElement, 'atom-smart-template:toggle'
+        atom.commands.dispatch workspaceElement, 'atom-smart-template-extended:toggle'
         expect(atomSmartTemplatePanel.isVisible()).toBe false
 
     it "hides and shows the view", ->
@@ -45,18 +45,18 @@ describe "AtomSmartTemplate", ->
       # workspaceElement to the DOM are generally slower than those off DOM.
       jasmine.attachToDOM(workspaceElement)
 
-      expect(workspaceElement.querySelector('.atom-smart-template')).not.toExist()
+      expect(workspaceElement.querySelector('.atom-smart-template-extended')).not.toExist()
 
       # This is an activation event, triggering it causes the package to be
       # activated.
-      atom.commands.dispatch workspaceElement, 'atom-smart-template:toggle'
+      atom.commands.dispatch workspaceElement, 'atom-smart-template-extended:toggle'
 
       waitsForPromise ->
         activationPromise
 
       runs ->
         # Now we can test for view visibility
-        atomSmartTemplateElement = workspaceElement.querySelector('.atom-smart-template')
+        atomSmartTemplateElement = workspaceElement.querySelector('.atom-smart-template-extended')
         expect(atomSmartTemplateElement).toBeVisible()
-        atom.commands.dispatch workspaceElement, 'atom-smart-template:toggle'
+        atom.commands.dispatch workspaceElement, 'atom-smart-template-extended:toggle'
         expect(atomSmartTemplateElement).not.toBeVisible()
